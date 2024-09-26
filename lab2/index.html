@@ -1,0 +1,28 @@
+</head>
+<body>
+<h1>Лабораторна робота №2</h1>
+
+<div class="form-container">
+    <h2>Завантаження файлу</h2>
+    <form action="process.php" method="POST" enctype="multipart/form-data">
+        <label for="file">Оберіть файл (png, jpg, jpeg, до 2 МБ):</label>
+        <input type="file" name="file" id="file" accept=".png, .jpg, .jpeg" required>
+        <input type="submit" value="Завантажити">
+    </form>
+</div>
+
+<div class="form-container">
+    <h2>Запис даних у лог</h2>
+    <form action="text.php" method="POST">
+        <label for="logData">Введіть текст для запису у лог:</label>
+        <textarea name="logData" id="logData" rows="5" required></textarea>
+        <input type="submit" value="Записати у лог">
+    </form>
+</div>
+
+<div class="links">
+    <a href="list.php">Переглянути список завантажених файлів</a>
+    <a href="text.php">Переглянути лог</a>
+</div>
+</body>
+</html>
