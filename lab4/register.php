@@ -1,3 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+</head>
+<body>
+    <h2>Форма реєстрації</h2>
+    <form action="register.php" method="post">
+        <label for="username">Ім'я користувача:</label>
+        <input type="text" name="username" required><br><br>
+        
+        <label for="email">Електронна пошта:</label>
+        <input type="email" name="email" required><br><br>
+        
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" required><br><br>
+        
+        <input type="submit" value="Зареєструватися">
+    </form>
+</body>
+</html>
+
 <?php
 session_start();
 require_once 'config.php';
@@ -31,3 +54,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $conn->close();
 }
 ?>
+
+
