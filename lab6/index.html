@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банківський рахунок</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"], select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Банківський рахунок</h1>
+        <form action="process.php" method="POST">
+            <select name="action" required>
+                <option value="" disabled selected>Виберіть дію</option>
+                <option value="deposit">Поповнити рахунок</option>
+                <option value="withdraw">Зняти кошти</option>
+                <option value="balance">Перевірити баланс</option>
+                <option value="interest">Застосувати відсотки</option>
+            </select>
+            <input type="text" name="amount" placeholder="Сума (якщо потрібно)" />
+            <button type="submit">Виконати</button>
+        </form>
+        <div class="message">
+            <?php
+            if (isset($_GET['message'])) {
+                echo htmlspecialchars($_GET['message']);
+            }
+            ?>
+        </div>
+    </div>
+</body>
+</html>
